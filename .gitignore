@@ -1,0 +1,7 @@
+node_modules/
+fake-repo/node_modules/
+fake-repo/upgreat-logs/
+coverage/
+**/.upgreat/
+yarn-error.log
+test-report.html

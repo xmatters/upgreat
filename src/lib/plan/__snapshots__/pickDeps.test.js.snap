@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should exclude by regex 1`] = `
+Array [
+  Object {
+    "dev": false,
+    "name": "p1",
+    "version": "1.1.1",
+  },
+  Object {
+    "dev": false,
+    "name": "p2",
+    "version": "2.2.2",
+  },
+  Object {
+    "dev": false,
+    "name": "p4",
+    "version": "4.4.4",
+  },
+]
+`;
+
+exports[`should exclude by regex 2`] = `
+Array [
+  Object {
+    "dev": true,
+    "name": "p3",
+    "version": "3.3.3",
+  },
+  Object {
+    "dev": false,
+    "name": "p4",
+    "version": "4.4.4",
+  },
+]
+`;
+
+exports[`should include by regex 1`] = `
+Array [
+  Object {
+    "dev": true,
+    "name": "p3",
+    "version": "3.3.3",
+  },
+]
+`;
+
+exports[`should include by regex 2`] = `
+Array [
+  Object {
+    "dev": false,
+    "name": "p1",
+    "version": "1.1.1",
+  },
+  Object {
+    "dev": false,
+    "name": "p2",
+    "version": "2.2.2",
+  },
+]
+`;
+
+exports[`should pick all deps 1`] = `
+Array [
+  Object {
+    "dev": false,
+    "name": "p1",
+    "version": "1.1.1",
+  },
+  Object {
+    "dev": false,
+    "name": "p2",
+    "version": "2.2.2",
+  },
+  Object {
+    "dev": true,
+    "name": "p3",
+    "version": "3.3.3",
+  },
+  Object {
+    "dev": false,
+    "name": "p4",
+    "version": "4.4.4",
+  },
+]
+`;
+
+exports[`should respect packageType 1`] = `
+Array [
+  Object {
+    "dev": false,
+    "name": "p1",
+    "version": "1.1.1",
+  },
+  Object {
+    "dev": false,
+    "name": "p2",
+    "version": "2.2.2",
+  },
+  Object {
+    "dev": false,
+    "name": "p4",
+    "version": "4.4.4",
+  },
+]
+`;
+
+exports[`should respect packageType 2`] = `
+Array [
+  Object {
+    "dev": true,
+    "name": "p3",
+    "version": "3.3.3",
+  },
+  Object {
+    "dev": false,
+    "name": "p4",
+    "version": "4.4.4",
+  },
+]
+`;

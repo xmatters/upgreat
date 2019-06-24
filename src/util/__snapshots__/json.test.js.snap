@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`readJSONFile should return parsed json 1`] = `
+Object {
+  "hello": true,
+}
+`;
+
+exports[`readJSONFile should throw error if json parse fails 1`] = `[Error: could not parse notjson.txt, is it a valid JSON file?]`;
+
+exports[`readJSONFile should throw error if path is wrong 1`] = `[Error: could not read fake.json, is the repo path correct?]`;

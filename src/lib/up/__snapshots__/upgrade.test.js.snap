@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should return null if upgrade fails 1`] = `null`;
+
+exports[`should return null if upgrade fails 2`] = `
+Array [
+  Array [
+    "  - dep: 1.1.1 -> 2.2.2 (major)",
+  ],
+  Array [
+    "    failed upgrade",
+  ],
+]
+`;
+
+exports[`should runBuild if dev dep 1`] = `
+Object {
+  "dev": true,
+  "diff": "major",
+  "name": "dep",
+  "targetVersion": "2.2.2",
+  "version": "1.1.1",
+}
+`;
+
+exports[`should runBuild if dev dep 2`] = `
+Array [
+  Array [
+    "  - dep: 1.1.1 -> 2.2.2 (major)",
+  ],
+  Array [
+    "      devDependency, running build",
+  ],
+]
+`;
+
+exports[`should runTests if not dev dep 1`] = `
+Object {
+  "diff": "major",
+  "name": "dep",
+  "targetVersion": "2.2.2",
+  "version": "1.1.1",
+}
+`;
+
+exports[`should runTests if not dev dep 2`] = `
+Array [
+  Array [
+    "  - dep: 1.1.1 -> 2.2.2 (major)",
+  ],
+  Array [
+    "      dependency, running tests",
+  ],
+]
+`;
+
+exports[`should write test error to file and error out if rollback fails 1`] = `
+Object {
+  "dev": true,
+  "diff": "major",
+  "err": Object {
+    "stderr": "exec stderr",
+  },
+  "name": "dep",
+  "targetVersion": "2.2.2",
+  "version": "1.1.1",
+}
+`;
+
+exports[`should write test error to file and error out if rollback fails 2`] = `
+Array [
+  Array [
+    "  - dep: 1.1.1 -> 2.2.2 (major)",
+  ],
+  Array [
+    "      devDependency, running build",
+  ],
+  Array [
+    "      tests/build failed after upgrade, rolling back.. (failure details in .upgreat/dep@1.1.1->2.2.2.txt)",
+  ],
+  Array [
+    "      failed rolling back!",
+  ],
+]
+`;
+
+exports[`should write test error to file and error out if rollback fails 3`] = `
+Array [
+  Array [
+    "yarn upgrade dep@2.2.2",
+  ],
+  Array [
+    "yarn upgrade dep@1.1.1",
+  ],
+]
+`;
+
+exports[`should write test error to file and roll back if test fails 1`] = `
+Object {
+  "dev": true,
+  "diff": "major",
+  "err": Object {
+    "stderr": "stderr string",
+  },
+  "name": "dep",
+  "targetVersion": "2.2.2",
+  "version": "1.1.1",
+}
+`;
+
+exports[`should write test error to file and roll back if test fails 2`] = `
+Array [
+  Array [
+    "  - dep: 1.1.1 -> 2.2.2 (major)",
+  ],
+  Array [
+    "      devDependency, running build",
+  ],
+  Array [
+    "      tests/build failed after upgrade, rolling back.. (failure details in .upgreat/dep@1.1.1->2.2.2.txt)",
+  ],
+]
+`;
+
+exports[`should write test error to file and roll back if test fails 3`] = `
+Array [
+  Array [
+    "yarn upgrade dep@2.2.2",
+  ],
+  Array [
+    "yarn upgrade dep@1.1.1",
+  ],
+]
+`;

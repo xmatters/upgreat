@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should return {plan, missingPeers, errors} 1`] = `
+Object {
+  "errors": Array [
+    Object {
+      "err": 404,
+      "name": "404-pkg",
+      "peers": Array [],
+    },
+  ],
+  "missingPeers": Array [
+    "missingPeer",
+  ],
+  "plan": Array [
+    Object {
+      "diff": null,
+      "name": "nonMissingPeer",
+      "peers": Array [],
+    },
+    Object {
+      "diff": "major",
+      "name": "p2",
+      "peers": Array [
+        "nonMissingPeer",
+      ],
+    },
+    Object {
+      "diff": "patch",
+      "name": "p3",
+      "peers": Array [
+        "p2",
+      ],
+    },
+    Object {
+      "diff": "minor",
+      "name": "p1",
+      "peers": Array [
+        "p2",
+      ],
+    },
+  ],
+}
+`;
+
+exports[`should work with no args 1`] = `
+Object {
+  "errors": Array [],
+  "missingPeers": Array [],
+  "plan": Array [],
+}
+`;

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should return CHANGELOG.md url if it exists 1`] = `
+Array [
+  "https://github.com/facebook/jest.git",
+  "https://raw.githubusercontent.com/facebook/jest/master/CHANGELOG.md",
+]
+`;
+
+exports[`should return changelog.md url if it exists 1`] = `
+Array [
+  "https://github.com/facebook/jest.git",
+  "https://raw.githubusercontent.com/facebook/jest/master/changelog.md",
+]
+`;
+
+exports[`should return null if changelog not found 1`] = `
+Array [
+  "https://github.com/facebook/jest.git",
+  null,
+]
+`;
+
+exports[`should return null if repo url cant be resolved 1`] = `
+Array [
+  null,
+  null,
+]
+`;

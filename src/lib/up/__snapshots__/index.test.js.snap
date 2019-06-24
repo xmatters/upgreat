@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`run should do upgrades in order 1`] = `
+Array [
+  Array [
+    "got plan from .upgreat/plan.json",
+  ],
+  Array [
+    "running tests before starting upgrades...",
+  ],
+  Array [
+    "👍  tests are fine, starting upgrades",
+  ],
+  Array [
+    "✅  upgraded 2",
+  ],
+  Array [
+    "❌  errors 1",
+  ],
+]
+`;
+
+exports[`run should fail if initial tests dont pass 1`] = `[Error: your tests need to pass before attempting the upgrade! 😒]`;
+
+exports[`run should fail if initial tests dont pass 2`] = `
+Array [
+  Array [
+    "got plan from .upgreat/plan.json",
+  ],
+  Array [
+    "running tests before starting upgrades...",
+  ],
+]
+`;
+
+exports[`run should fail if plan cannot be read 1`] = `[Error: the message]`;
+
+exports[`run should fail if plan cannot be read 2`] = `
+Array [
+  Array [
+    ".upgreat/plan.json",
+  ],
+]
+`;

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`run should error if path is wrong 1`] = `[Error: could not read package.json, is the repo path correct?]`;
+
+exports[`run should greet 1`] = `
+Array [
+  Array [
+    "👋 hi, will read package.json",
+  ],
+  Array [
+    "you have missing peerDependencies that you will need",
+  ],
+  Array [
+    "  babel-plugin-long-name-transformer,lodash",
+  ],
+  Array [
+    "unable to retrieve version info for some packages, these will be ignored in the upgrade plan",
+  ],
+  Array [
+    "  some-pkg: 404
+  other-pkg: exotic",
+  ],
+  Array [
+    "🗒  wrote upgrade plan to .upgreat/plan.json",
+  ],
+  Array [
+    "run upgreat up to start the upgrades!",
+  ],
+]
+`;

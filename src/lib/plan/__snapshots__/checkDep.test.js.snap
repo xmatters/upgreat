@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should return dependency details if no errors 1`] = `
+Object {
+  "changelog": "http://changelog.address.here",
+  "dev": true,
+  "diff": "major",
+  "name": "my-pkg",
+  "peers": Array [],
+  "repo": "http://readme.address.here",
+  "targetVersion": "2.0.0",
+  "version": "1.2.4",
+}
+`;
+
+exports[`should return error if get npm fails 1`] = `
+Object {
+  "err": 404,
+  "name": "404-pkg",
+  "peers": Array [],
+  "version": "3.4.5",
+}
+`;
+
+exports[`should return error if package is unpublished 1`] = `
+Object {
+  "err": "unpublished at some date",
+  "name": "unpublished-pkg",
+  "peers": Array [],
+  "version": "3.4.5",
+}
+`;
+
+exports[`should return if exotic 1`] = `
+Object {
+  "err": "exotic",
+  "name": "some-exotic",
+  "peers": Array [],
+  "version": "file://../../hard/path",
+}
+`;

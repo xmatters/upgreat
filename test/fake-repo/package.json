@@ -1,0 +1,25 @@
+{
+  "name": "super-outdated",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "bluebird": "3.5.0",
+    "caporal": "0.7.0",
+    "commander": "2.12.2",
+    "lodash": "4.17.4",
+    "ramda": "0.24.1",
+    "shelljs": "0.7.8"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-preset-env": "1.6.1",
+    "jest": "21.2.1"
+  },
+  "jest": {
+    "testPathIgnorePatterns": ["/node_modules/"]
+  }
+}
