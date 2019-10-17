@@ -8,14 +8,8 @@ const createPlan = require('./createPlan')
 
 class Plan extends Command {
   async run() {
-    const {
-      // args: { path },
-      flags,
-    } = this.parse(Plan)
+    const { flags } = this.parse(Plan)
 
-    // const packageJsonPath = path.endsWith('package.json')
-    //   ? path
-    //   : `${path}/package.json`
     const packageJsonPath = 'package.json'
 
     this.log(`👋 hi, will read ${chalk.magenta(`${packageJsonPath}`)}`)
@@ -55,14 +49,7 @@ class Plan extends Command {
 
 Plan.description = 'create the upgrade plan for the package'
 
-Plan.args = [
-  // {
-  //   name: 'path',
-  //   required: true,
-  //   description: 'repository path',
-  //   default: '.',
-  // },
-]
+Plan.args = []
 
 Plan.flags = {
   include: flags.string({

@@ -20,7 +20,7 @@ _only supports yarn currently, npm support on the way_
 
 ## usage
 
-You can use this package directly via `npx`, or install it globally.
+You can use this package directly via `npx`, or install it globally (`npm install upgreat -g`).
 
 Move to the folder of your package and create an upgrade plan with
 

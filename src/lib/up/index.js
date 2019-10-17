@@ -10,10 +10,6 @@ const upgrade = require('./upgrade')
 
 class Up extends Command {
   async run() {
-    // const {
-    //   args: { path },
-    // } = this.parse(Up)
-
     const path = '.upgreat/plan.json'
 
     let plan
@@ -46,14 +42,7 @@ class Up extends Command {
 
 Up.description = 'execute the upgrade plan'
 
-Up.args = [
-  // {
-  //   name: 'path',
-  //   required: true,
-  //   description: 'plan path',
-  //   default: '.upgreat/plan.json',
-  // },
-]
+Up.args = []
 
 Up.flags = {}
 
