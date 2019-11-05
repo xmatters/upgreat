@@ -1,5 +1,5 @@
 {
-  "name": "upgreat",
+  "name": "@xmatters/upgreat",
   "version": "1.0.0",
   "description": "CLI for a painless way to upgrade package dependencies",
   "main": "index.js",
