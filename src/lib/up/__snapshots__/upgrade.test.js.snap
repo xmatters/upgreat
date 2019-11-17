@@ -5,7 +5,7 @@ exports[`should return null if upgrade fails 1`] = `null`;
 exports[`should return null if upgrade fails 2`] = `
 Array [
   Array [
-    "  - dep: 1.1.1 -> 2.2.2 (major)",
+    "  - dep: 1.1.1 -> 2.2.2 ([31mmajor[39m)",
   ],
   Array [
     "    failed upgrade",
@@ -26,7 +26,7 @@ Object {
 exports[`should runBuild if dev dep 2`] = `
 Array [
   Array [
-    "  - dep: 1.1.1 -> 2.2.2 (major)",
+    "  - dep: 1.1.1 -> 2.2.2 ([31mmajor[39m)",
   ],
   Array [
     "      devDependency, running build",
@@ -46,7 +46,7 @@ Object {
 exports[`should runTests if not dev dep 2`] = `
 Array [
   Array [
-    "  - dep: 1.1.1 -> 2.2.2 (major)",
+    "  - dep: 1.1.1 -> 2.2.2 ([31mmajor[39m)",
   ],
   Array [
     "      dependency, running tests",
@@ -70,13 +70,13 @@ Object {
 exports[`should write test error to file and error out if rollback fails 2`] = `
 Array [
   Array [
-    "  - dep: 1.1.1 -> 2.2.2 (major)",
+    "  - dep: 1.1.1 -> 2.2.2 ([31mmajor[39m)",
   ],
   Array [
     "      devDependency, running build",
   ],
   Array [
-    "      tests/build failed after upgrade, rolling back.. (failure details in .upgreat/dep@1.1.1->2.2.2.txt)",
+    "      tests/build failed after upgrade, rolling back.. (failure details in [35m.upgreat/dep@1.1.1->2.2.2.txt[39m)",
   ],
   Array [
     "      failed rolling back!",
@@ -111,13 +111,13 @@ Object {
 exports[`should write test error to file and roll back if test fails 2`] = `
 Array [
   Array [
-    "  - dep: 1.1.1 -> 2.2.2 (major)",
+    "  - dep: 1.1.1 -> 2.2.2 ([31mmajor[39m)",
   ],
   Array [
     "      devDependency, running build",
   ],
   Array [
-    "      tests/build failed after upgrade, rolling back.. (failure details in .upgreat/dep@1.1.1->2.2.2.txt)",
+    "      tests/build failed after upgrade, rolling back.. (failure details in [35m.upgreat/dep@1.1.1->2.2.2.txt[39m)",
   ],
 ]
 `;

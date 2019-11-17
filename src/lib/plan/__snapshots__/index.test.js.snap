@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`run should error if path is wrong 1`] = `[Error: could not read package.json, is the repo path correct?]`;
+exports[`run should error if path is wrong 1`] = `[Error: could not read [35mpackage.json[39m, is the repo path correct?]`;
 
 exports[`run should greet 1`] = `
 Array [
   Array [
-    "👋 hi, will read package.json",
+    "👋 hi, will read [35mpackage.json[39m",
   ],
   Array [
     "you have missing peerDependencies that you will need",
@@ -21,10 +21,10 @@ Array [
   other-pkg: exotic",
   ],
   Array [
-    "🗒  wrote upgrade plan to .upgreat/plan.json",
+    "🗒  wrote upgrade plan to [35m.upgreat/plan.json[39m",
   ],
   Array [
-    "run upgreat up to start the upgrades!",
+    "run [36mupgreat up[39m to start the upgrades!",
   ],
 ]
 `;

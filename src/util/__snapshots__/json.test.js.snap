@@ -6,6 +6,6 @@ Object {
 }
 `;
 
-exports[`readJSONFile should throw error if json parse fails 1`] = `[Error: could not parse notjson.txt, is it a valid JSON file?]`;
+exports[`readJSONFile should throw error if json parse fails 1`] = `[Error: could not parse [35mnotjson.txt[39m, is it a valid JSON file?]`;
 
-exports[`readJSONFile should throw error if path is wrong 1`] = `[Error: could not read fake.json, is the repo path correct?]`;
+exports[`readJSONFile should throw error if path is wrong 1`] = `[Error: could not read [35mfake.json[39m, is the repo path correct?]`;
