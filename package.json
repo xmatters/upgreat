@@ -2,9 +2,23 @@
   "name": "@xmatters/upgreat",
   "version": "1.0.0",
   "description": "CLI for a painless way to upgrade package dependencies",
-  "main": "index.js",
   "author": "Bugra Firat <bfirat@xmatters.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xmatters/upgreat"
+  },
+  "keywords": [
+    "dependencies",
+    "package-json",
+    "nodejs",
+    "cli",
+    "package-management",
+    "npm",
+    "yarn",
+    "dependency-manager"
+  ],
+  "main": "index.js",
   "bin": {
     "upgreat": "./bin/run"
   },
