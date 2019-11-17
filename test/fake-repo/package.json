@@ -10,7 +10,7 @@
     "bluebird": "3.5.0",
     "caporal": "0.7.0",
     "commander": "2.12.2",
-    "lodash": "4.17.4",
+    "lodash": "4.17.13",
     "ramda": "0.24.1",
     "shelljs": "0.7.8"
   },
