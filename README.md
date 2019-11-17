@@ -20,18 +20,19 @@ _only supports yarn currently, npm support on the way_
 
 ## usage
 
-You can use this package directly via `npx`, or install it globally (`npm install upgreat -g`).
+You can use this package directly via `npx`, or install it globally (`npm install @xmatters/upgreat -g`).
 
 Move to the folder of your package and create an upgrade plan with
 
 ```
+cd my-project
 upgreat plan
 ```
 
 or
 
 ```
-npx upgreat plan
+npx @xmatters/upgreat plan
 ```
 
 the plan will be created in the `.upgreat/` directory. Then, you can execute the upgrades with
@@ -43,7 +44,7 @@ upgreat up
 or
 
 ```
-npx upgreat up
+npx @xmatters/upgreat up
 ```
 
 Sit back and watch it do it's thing. Any upgrades that cause failures will be rolled back. `.upgreat/` directory will contain the dependency that failed with `stderr` info.
