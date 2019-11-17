@@ -1,5 +1,9 @@
 # upgreat
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/88d9129f5f50280233cf/maintainability)](https://codeclimate.com/github/xmatters/upgreat/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/88d9129f5f50280233cf/test_coverage)](https://codeclimate.com/github/xmatters/upgreat/test_coverage)
+[![Build Status](https://travis-ci.org/xmatters/upgreat.svg?branch=master)](https://travis-ci.org/xmatters/upgreat)
+
 **upgreat** is a CLI for a painless way to upgrade your package dependencies!
 
 **upgreat** helps you upgrade the dependencies of your project. Have it plan and execute upgrades for you, making sure they don't cause any issues. It will run tests (or build), attempt an upgrade for a package, then run the tests/build again to verify.

@@ -50,7 +50,6 @@
   "devDependencies": {
     "@oclif/dev-cli": "^1.22.0",
     "@oclif/test": "^1.2.4",
-    "codeclimate-test-reporter": "^0.5.1",
     "jest": "^24.7.1",
     "jest-html-reporter": "^2.5.0",
     "prettier": "1.16.4"
