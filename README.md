@@ -56,7 +56,7 @@ OPTIONS
   -x, --exclude=exclude                           exclude packages by regex
 ```
 
-Then, execute the upgrade plan via the `up` command. This will read `.upgreeat/plan.json` and start upgrading packages and testing/building.
+Then, execute the upgrade plan via the `up` command. This will read `.upgreat/plan.json` and start upgrading packages and testing/building.
 
 ```
 > upgreat up help
