@@ -25,7 +25,7 @@ class Up extends Command {
     this.log('running tests before starting upgrades...')
 
     try {
-      await runTests()
+      await runTests(flags)
     } catch (err) {
       await writeFile('.upgreat/initialTest.stderr.txt', err.stderr)
       this.error('your tests need to pass before attempting the upgrade! 😒')
