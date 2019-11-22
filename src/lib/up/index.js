@@ -1,4 +1,4 @@
-const { Command } = require('@oclif/command')
+const { Command, flags } = require('@oclif/command')
 const { mapSeries } = require('bluebird')
 
 const chalk = require('../../util/chalk')
@@ -10,6 +10,8 @@ const upgrade = require('./upgrade')
 
 class Up extends Command {
   async run() {
+    const { flags } = this.parse(Up)
+
     const path = '.upgreat/plan.json'
 
     let plan
@@ -31,7 +33,7 @@ class Up extends Command {
 
     this.log('👍  tests are fine, starting upgrades')
 
-    const upgrades = await mapSeries(plan, upgrade(this.log))
+    const upgrades = await mapSeries(plan, upgrade(this.log, flags))
     const errors = upgrades.filter(dep => dep.err)
     const upgraded = upgrades.filter(dep => !dep.err)
 
@@ -44,6 +46,30 @@ Up.description = 'execute the upgrade plan'
 
 Up.args = []
 
-Up.flags = {}
+Up.flags = {
+  npm: flags.boolean({
+    default: false,
+    description: 'use npm',
+    hidden: false,
+    multiple: false,
+    required: false,
+  }),
+  testScript: flags.string({
+    char: 't',
+    description: 'test script to use from package.json',
+    default: 'test',
+    hidden: false,
+    multiple: false,
+    required: false,
+  }),
+  buildScript: flags.string({
+    char: 'b',
+    description: 'build script to use from package.json',
+    default: 'build',
+    hidden: false,
+    multiple: false,
+    required: false,
+  }),
+}
 
 module.exports = Up

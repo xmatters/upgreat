@@ -14,15 +14,17 @@ const diffColor = {
   prerelease: chalk.red,
 }
 
-const upgrade = log => async dep => {
+const upgrade = (log, flags) => async dep => {
   log(
     `  - ${dep.name}: ${dep.version} -> ${dep.targetVersion} (${diffColor[
       dep.diff
     ](dep.diff)})`,
   )
 
+  const upgradeCmd = flags.npm ? 'npm install' : 'yarn upgrade'
+
   try {
-    await exec(`yarn upgrade ${dep.name}@${dep.targetVersion}`)
+    await exec(`${upgradeCmd} ${dep.name}@${dep.targetVersion}`)
   } catch (e) {
     log('    failed upgrade')
     return null
@@ -31,16 +33,14 @@ const upgrade = log => async dep => {
   try {
     if (dep.dev) {
       log('      devDependency, running build')
-      await runBuild()
+      await runBuild(flags)
     } else {
       log('      dependency, running tests')
-      await runTests()
+      await runTests(flags)
     }
     return dep
   } catch (testErr) {
-    const errlogPath = `.upgreat/${dep.name}@${dep.version}->${
-      dep.targetVersion
-    }.txt`
+    const errlogPath = `.upgreat/${dep.name}@${dep.version}->${dep.targetVersion}.txt`
 
     log(
       `      tests/build failed after upgrade, rolling back.. (failure details in ${chalk.magenta(
@@ -51,7 +51,7 @@ const upgrade = log => async dep => {
     await writeFile(errlogPath, testErr.stderr)
 
     try {
-      await exec(`yarn upgrade ${dep.name}@${dep.version}`)
+      await exec(`${upgradeCmd} ${dep.name}@${dep.version}`)
       return { ...dep, err: testErr }
     } catch (rollbackErr) {
       log('      failed rolling back!')

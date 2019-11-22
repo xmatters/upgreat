@@ -15,7 +15,7 @@ describe('run', () => {
       Promise.reject(new Error('the message')),
     )
 
-    const up = new Up()
+    const up = new Up([])
 
     await expect(up.run()).rejects.toMatchSnapshot()
     expect(json.readJSONFile.mock.calls).toMatchSnapshot()
@@ -29,7 +29,7 @@ describe('run', () => {
       }),
     )
 
-    const up = new Up()
+    const up = new Up([])
     const spy = jest.spyOn(up, 'log')
     spy.mockImplementation(() => {})
 
@@ -62,7 +62,7 @@ describe('run', () => {
       )
     upgrade.mockImplementationOnce(() => upgradeFn)
 
-    const up = new Up()
+    const up = new Up([])
     const spy = jest.spyOn(up, 'log')
     spy.mockImplementation(() => {})
 

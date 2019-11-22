@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should export cli 1`] = `
+Object {
+  "Command": [Function],
+  "Main": [Function],
+  "default": [Function],
+  "flags": Object {
+    "boolean": [Function],
+    "build": [Function],
+    "enum": [Function],
+    "help": [Function],
+    "integer": [Function],
+    "option": [Function],
+    "string": [Function],
+    "version": [Function],
+  },
+  "run": [Function],
+}
+`;
