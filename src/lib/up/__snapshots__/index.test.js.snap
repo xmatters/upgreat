@@ -3,7 +3,7 @@
 exports[`run should do upgrades in order 1`] = `
 Array [
   Array [
-    "got plan from [35m.upgreat/plan.json[39m",
+    "got plan from .upgreat/plan.json",
   ],
   Array [
     "running tests before starting upgrades...",
@@ -25,7 +25,7 @@ exports[`run should fail if initial tests dont pass 1`] = `[Error: your tests ne
 exports[`run should fail if initial tests dont pass 2`] = `
 Array [
   Array [
-    "got plan from [35m.upgreat/plan.json[39m",
+    "got plan from .upgreat/plan.json",
   ],
   Array [
     "running tests before starting upgrades...",

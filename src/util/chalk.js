@@ -1,5 +1,5 @@
 const chalk = require('chalk')
 
 module.exports = new chalk.Instance({
-  enabled: process.env.NODE_ENV !== 'test',
+  level: process.env.NODE_ENV !== 'test' ? 3 : 0,
 })
