@@ -88,3 +88,35 @@ it('should return dependency details if no errors', async () => {
     }),
   ).resolves.toMatchSnapshot()
 })
+
+it('should return dependency details if no repo url', async () => {
+  axios.get.mockImplementationOnce(() =>
+    Promise.resolve({
+      data: {
+        versions: {
+          '1.2.3': {},
+          '1.2.4': { version: '1.2.4' },
+          '2.0.0': { version: '2.0.0' },
+        },
+        'dist-tags': {
+          latest: '2.0.0',
+        },
+        time: {},
+      },
+    }),
+  )
+  getChangelog.mockImplementationOnce(() =>
+    Promise.resolve([
+      'http://readme.address.here',
+      'http://changelog.address.here',
+    ]),
+  )
+
+  await expect(
+    checkDep({
+      name: 'my-pkg',
+      version: '^1.2.3',
+      dev: true,
+    }),
+  ).resolves.toMatchSnapshot()
+})

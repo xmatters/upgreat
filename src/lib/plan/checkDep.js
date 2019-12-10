@@ -44,7 +44,10 @@ const checkDep = async ({ name, version, dev }) => {
   )
   const current = data.versions[maxSatisfying]
   const latest = data.versions[data['dist-tags'].latest]
-  const [repo, changelog] = await getChangelog(data.repository.url)
+  let repo, changelog
+  if (data.repository && data.repository.url) {
+    ;[repo, changelog] = await getChangelog(data.repository.url)
+  }
 
   return {
     name,

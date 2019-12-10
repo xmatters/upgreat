@@ -13,6 +13,19 @@ Object {
 }
 `;
 
+exports[`should return dependency details if no repo url 1`] = `
+Object {
+  "changelog": undefined,
+  "dev": true,
+  "diff": "major",
+  "name": "my-pkg",
+  "peers": Array [],
+  "repo": undefined,
+  "targetVersion": "2.0.0",
+  "version": "1.2.4",
+}
+`;
+
 exports[`should return error if get npm fails 1`] = `
 Object {
   "err": 404,
