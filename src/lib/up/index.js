@@ -34,8 +34,8 @@ class Up extends Command {
     this.log('👍  tests are fine, starting upgrades')
 
     const upgrades = await mapSeries(plan, upgrade(this.log, flags))
-    const errors = upgrades.filter(dep => dep.err)
-    const upgraded = upgrades.filter(dep => !dep.err)
+    const errors = upgrades.filter(dep => !dep || dep.err)
+    const upgraded = upgrades.filter(dep => dep && !dep.err)
 
     this.log(`✅  upgraded ${upgraded.length}`)
     this.log(`❌  errors ${errors.length}`)

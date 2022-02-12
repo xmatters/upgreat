@@ -44,9 +44,9 @@ Object {
 }
 `;
 
-exports[`should return if exotic 1`] = `
+exports[`should return if unrecognizable semVer 1`] = `
 Object {
-  "err": "exotic",
+  "err": "invalid semantic versioning",
   "name": "some-exotic",
   "peers": Array [],
   "version": "file://../../hard/path",

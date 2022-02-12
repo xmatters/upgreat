@@ -21,57 +21,54 @@ It can plan based on:
 - include regex
 - exclude regex
 
-It can upgrade with:
+It can upgrade all dependencies:
 
-- yarn or npm
-- using test and build scripts defined in your `package.json`
+- with yarn or npm
+- using _test_ and _build_ scripts defined in your `package.json`
 
 ## usage
 
 You can use this package directly via `npx`, or install it globally (`npm install @xmatters/upgreat -g`).
 
+```sh
+upgreat [COMMAND]
+# eg: upgreat help
+# eg: npx @xmatters/upgreat help
 ```
-> upgreat help
-USAGE
-  $ upgreat [COMMAND]
-
 COMMANDS
-  help  display help for upgreat
-  plan  create the upgrade plan for the package
-  up    execute the upgrade plan
+```sh
+  help  # display help for upgreat
+  plan  # create the upgrade plan for the package
+  up    # execute the upgrade plan
 ```
-
+### 1. upgreat plan
 First, create an upgrade plan via the `plan` command. This will create a file `.upgreat/plan.json` with the details and order of upgrade for each package.
-
+```sh
+upgreat plan
+# create the upgrade plan
+# by default, plans upgrade of ALL dependencies
 ```
-> upgreat plan help
-create the upgrade plan for the package
-
-USAGE
-  $ upgreat plan
-
 OPTIONS
-  -i, --include=include                           include packages by regex
-  -p, --packageType=dependencies|devDependencies  choose specific package types
-  -x, --exclude=exclude                           exclude packages by regex
+```sh
+-i, --include=include                           # include packages by regex
+-p, --packageType=dependencies|devDependencies  # limit to a specific package type
+-x, --exclude=exclude                           # exclude packages by regex
 ```
-
+### 2. upgreat up
 Then, execute the upgrade plan via the `up` command. This will read `.upgreat/plan.json` and start upgrading packages and testing/building.
-
+```sh
+upgreat up
+# execute the upgrade plan
 ```
-> upgreat up help
-execute the upgrade plan
-
-USAGE
-  $ upgreat up
-
 OPTIONS
-  -b, --buildScript=buildScript  [default: build] build script to use from
-                                 package.json
+```sh
+-b, --buildScript=buildScriptName   # name of the npm script in package.json
+                                    # used for building your app [default: build]
 
-  -t, --testScript=testScript    [default: test] test script to use from package.json
+-t, --testScript=testScriptName     # name of the npm script in package.json
+                                    # used for building your app [default: test]
 
-  --npm                          use npm
+--npm                               # use npm
 ```
 
 You can pass `-b` or `--buildScript` to define which script in your `package.json` gets run after upgrading a `devDependency`. By default this is `build` so **upgreat** will use `yarn build` or `npm run build`.
@@ -86,7 +83,7 @@ Sit back and watch it do it's thing. Any upgrades that cause failures will be ro
 
 Move to the folder of your package and create an upgrade plan
 
-```
+```sh
 cd my-project
 upgreat plan
 
@@ -97,16 +94,18 @@ npx @xmatters/upgreat plan
 
 then,
 
-```
+```sh
 upgreat up
 
 # or
 
+# yarn:
 npx @xmatters/upgreat up
+# npm:
+npx @xmatters/upgreat up --npm
 ```
 
-if you were using npm, and your test script was called `testTheProjectPls` you would invoke it as
-
+If you were using npm, and your test script was named `testTheProjectPls` you would invoke it as:
 ```
 upgreat up --npm -t testTheProjectPls
 ```
