@@ -6,7 +6,7 @@ jest.mock('./getChangelog')
 
 const checkDep = require('./checkDep')
 
-it('should return if unrecognizable semVer', async () => {
+it('should return if exotic', async () => {
   await expect(
     checkDep({
       name: 'some-exotic',

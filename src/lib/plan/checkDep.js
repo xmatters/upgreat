@@ -15,7 +15,7 @@ const checkDep = async ({ name, version, dev }) => {
     return {
       name,
       version,
-      err: 'invalid semantic versioning',
+      err: 'exotic',
       peers: [],
     }
   }
