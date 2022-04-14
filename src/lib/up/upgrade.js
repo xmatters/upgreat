@@ -21,12 +21,18 @@ const upgrade = (log, flags) => async dep => {
     ](dep.diff)})`,
   )
 
-  const upgradeCmd = flags.npm ? 'npm install' : 'yarn upgrade'
+  let upgradeCmd = flags.npm ? 'npm install' : 'yarn upgrade';
+  if (dep.dev) {
+    upgradeCmd += ' -D';
+  }
 
   try {
     await exec(`${upgradeCmd} ${dep.name}@${dep.targetVersion}`)
   } catch (e) {
-    log('    failed upgrade')
+    log('    failed upgrade');
+    if (e && e.cmd) {
+      log(`    attempted: ${e.cmd}`);
+    }
     return null
   }
 

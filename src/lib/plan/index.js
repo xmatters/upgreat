@@ -47,7 +47,7 @@ class Plan extends Command {
   }
 }
 
-Plan.description = 'create the upgrade plan for the package'
+Plan.description = 'create the upgrade plan for all dependencies'
 
 Plan.args = []
 
@@ -68,7 +68,7 @@ Plan.flags = {
   }),
   packageType: flags.string({
     char: 'p',
-    description: 'choose specific package types',
+    description: 'limit to a specific package type',
     hidden: false,
     multiple: false,
     options: ['dependencies', 'devDependencies'],

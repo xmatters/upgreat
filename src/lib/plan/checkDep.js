@@ -4,7 +4,14 @@ const semver = require('semver')
 const getChangelog = require('./getChangelog')
 
 const checkDep = async ({ name, version, dev }) => {
-  if (version.startsWith('file:')) {
+  // starts with ~ or ^ or 1 or more digits
+  // followed by a . and 1 or more digits
+  // followed by a . and 1 or more digits
+  // can take some - and 1 or more digits at the end
+  // ends with a digit
+  // eg: ^1.22.333 || ~333.1.22 || 1.2.3-555
+  const isValidVersionString = /^[~^]?\d+\.\d+\.\d+(-\d+)?$/.test(version);
+  if (!isValidVersionString) {
     return {
       name,
       version,

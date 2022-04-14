@@ -87,10 +87,10 @@ Array [
 exports[`npm should write test error to file and error out if rollback fails 3`] = `
 Array [
   Array [
-    "npm install dep@2.2.2",
+    "npm install -D dep@2.2.2",
   ],
   Array [
-    "npm install dep@1.1.1",
+    "npm install -D dep@1.1.1",
   ],
 ]
 `;
@@ -125,10 +125,10 @@ Array [
 exports[`npm should write test error to file and roll back if test fails 3`] = `
 Array [
   Array [
-    "npm install dep@2.2.2",
+    "npm install -D dep@2.2.2",
   ],
   Array [
-    "npm install dep@1.1.1",
+    "npm install -D dep@1.1.1",
   ],
 ]
 `;
@@ -199,10 +199,10 @@ Array [
 exports[`yarn should write test error to file and error out if rollback fails 3`] = `
 Array [
   Array [
-    "yarn upgrade dep@2.2.2",
+    "yarn upgrade -D dep@2.2.2",
   ],
   Array [
-    "yarn upgrade dep@1.1.1",
+    "yarn upgrade -D dep@1.1.1",
   ],
 ]
 `;
@@ -237,10 +237,10 @@ Array [
 exports[`yarn should write test error to file and roll back if test fails 3`] = `
 Array [
   Array [
-    "yarn upgrade dep@2.2.2",
+    "yarn upgrade -D dep@2.2.2",
   ],
   Array [
-    "yarn upgrade dep@1.1.1",
+    "yarn upgrade -D dep@1.1.1",
   ],
 ]
 `;

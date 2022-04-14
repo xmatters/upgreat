@@ -5,3 +5,4 @@ coverage/
 **/.upgreat/
 yarn-error.log
 test-report.html
+package-lock.json
